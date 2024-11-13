@@ -4,7 +4,7 @@
 		<#list queryList as field>
 			<el-form-item prop="${field.attrName}">
 			<#if field.formType == 'text' || field.formType == 'textarea' || field.formType == 'editor'>
-			  <el-input v-model="state.queryForm.${field.attrName}" placeholder="${field.fieldComment!}"></el-input>
+			  <el-input v-model="state.queryForm.${field.attrName}" placeholder="${field.fieldComment!}" maxlength="100"></el-input>
 			<#elseif field.queryFormType == 'select'>
 			  <#if field.queryDict??>
 			  <ma-dict-select v-model="state.queryForm.${field.attrName}" dict-type="${field.queryDict}" placeholder="${field.fieldComment!}" clearable></ma-dict-select>

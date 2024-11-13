@@ -4,15 +4,15 @@
 	    <#list formList as field>
 			<#if field.formType == 'text'>
 				<el-form-item label="${field.fieldComment!}" prop="${field.attrName}">
-					<el-input v-model="dataForm.${field.attrName}" placeholder="${field.fieldComment!}"></el-input>
+					<el-input v-model="dataForm.${field.attrName}" placeholder="${field.fieldComment!}" maxlength="200"></el-input>
 				</el-form-item>
 			<#elseif field.formType == 'textarea'>
 				<el-form-item label="${field.fieldComment!}" prop="${field.attrName}">
-					<el-input type="textarea" v-model="dataForm.${field.attrName}"></el-input>
+					<el-input type="textarea" v-model="dataForm.${field.attrName}" maxlength="1000"></el-input>
 				</el-form-item>
 			<#elseif field.formType == 'editor'>
 				<el-form-item label="${field.fieldComment!}" prop="${field.attrName}">
-					<el-input type="textarea" v-model="dataForm.${field.attrName}"></el-input>
+					<el-input type="textarea" v-model="dataForm.${field.attrName}" maxlength="2000"></el-input>
 				</el-form-item>
 			<#elseif field.formType == 'select'>
 				<#if field.formDict??>
